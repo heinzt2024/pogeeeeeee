@@ -1,0 +1,16 @@
+stages:
+  - install
+  - test
+
+install_dependencies:
+  stage: install
+  image: python:3.9-slim
+  script:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+
+run_python:
+  stage: test
+  image: python:3.9-slim
+  script:
+    - python3 *.py
